@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdio.h>
 
 #define NULL_STRING "(null)"
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} /*this for the flags*/
@@ -13,7 +14,7 @@
 #define CONVERT_UNSIGNED 2
 
 #define OUTPUT_BUF_SIZE 1024
-#define BUF_FLUSH
+#define BUF_FLUSH -1
 
 typedef struct parameters /* for flags*/
 {
