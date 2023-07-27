@@ -21,11 +21,11 @@ typedef struct parameters /* for flags*/
 	unsigned int plus_flag		: 1;
 	unsigned int space_flag		: 1;
 	unsigned int hashtag_flag	: 1;
-	unsigned int zero_flag		0 : 1;
-	unsigned int minus_flag		0 : 1;
+	unsigned int zero_flag		: 1;
+	unsigned int minus_flag		: 1;
 
-	unsigned int h_modifier		0 : 1;
-	unsigned int l_modifire		0 : 1;
+	unsigned int h_modifire		: 1;
+	unsigned int l_modifire		: 1;
 
 	unsigned int width;
 	unsigned int presentage;
@@ -39,6 +39,7 @@ typedef struct specifire /*the specifire function*/
 }
 specifire_t;
 
+/* puts */
 int _puts(char *str);
 int _putchar(int c);
 
@@ -46,7 +47,7 @@ int print_char(va_list args, params_t *params);
 int print_int(va_list args, params_t *params);
 int print_string(va_list args, params_t *params);
 int print_percent(va_list args, params_t *params);
-int print_s(va_list args, params_t *params);
+int print_S(va_list args, params_t *params);
 
 /* Number Functions*/
 char *convert(long int num, int base, int flags, params_t *params);
@@ -54,11 +55,11 @@ int print_unsigned(va_list args, params_t *params);
 int print_address(va_list args, params_t *params);
 
 /* specifire Functions*/
-int *get_specifire(char *s)(va_list args, params_t *params);
+int (*get_specifire(char *s))(va_list args, params_t *params);
 int get_print_fun(char *s, va_list args, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifire(char *s, params_t *params);
-char *get_width(char *s, params_t *params);
+char *get_width(char *s, params_t *params, va_list args);
 
 /* convert numbers*/
 int print_hex(va_list arags, params_t *params);

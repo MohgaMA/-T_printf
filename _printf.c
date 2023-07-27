@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if(!format || (format[0] == '%' && !format[i]))/*check for the format that is not null*/
+	if(!format || (format[0] == '%' && !format[1]))/*check for the format that is not null*/
 		return (-1);
 	if(format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
@@ -34,15 +34,15 @@ int _printf(const char *format, ...)
 		}
 		p = get_width(p, &params, args);
 		p = get_presentage(p, &params, args);
-		if (get_modifire(p, &params)
+		if (get_modifire(p, &params))
 			p++;
 		if (!get_specifire(p))
 			sum += print_from_to(start, p,
-				params.1_modifire || params.h_modifire ? p - 1 : 0);
+				params.l_modifire || params.h_modifire ? p - 1 : 0);
 		else
 			sum += get_print_fun(p, args, &params);
 	}
 	_putchar(BUF_FLUSH);
-	va_end(args)
+	va_end(args);
 	return (sum);
 }

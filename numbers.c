@@ -43,7 +43,7 @@ char *convert(long int num, int base, int flags, params_t *params)
  */
 int print_unsigned(va_list args, params_t *params)
 {
-	unsigned long 1;
+	unsigned long l;
 
 	if (params->l_modifire)
 		l = (unsigned long)va_arg(args, unsigned long);

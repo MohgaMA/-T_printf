@@ -5,7 +5,7 @@
  * @args: the argument pointer
  * Return: void
  */
-void init_params(params_t, va_list args)
+void init_params(params_t *params, va_list args)
 {
 	params->unsign = 0;
 	params->plus_flag = 0;
@@ -19,5 +19,5 @@ void init_params(params_t, va_list args)
 
 	params->width = 0;
 	params->presentage = UINT_MAX;
-	void(args);
+	(void)args;
 }
